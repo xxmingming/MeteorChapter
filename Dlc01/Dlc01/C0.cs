@@ -1,5 +1,24 @@
 ﻿namespace C0
 {
+    /*外传数组，ID:2000，name显示在插件面板, zip标识dll存放的压缩包路径，解压后为Dlc/C0.dll
+     * 编译后把生成的C0.dll发给我，然后把这个剧本相关的模型和NPC定义也发给我
+     * 就可以让客户端动态加载你写好的剧本以及使用你的模型了
+     * reference标识引用，可以引用模型，模型定义在Plugins.json内，模型引用
+     *"Dlc":[
+        {
+            "Idx":2000,
+            "name": "外传",
+            "zip":"Dlc/C0.zip",
+            "desc":"外传",
+            "comment":"外传关卡,需要鸣人模型.",
+            "reference":[
+                {
+                    "Model":[2000]
+                }
+            ]
+        }
+    ]
+     */
     //OnStart处应用了npc2000_1,这个脚本里引用了模型2000,model = 2000
     public class LevelScript_c001 : LevelScriptBase
     {
@@ -7,7 +26,7 @@
         const int g_iNumStones = 32;
         int[] g_iStoneHP;
         int[] g_bStoneAlive;
-
+        //此函数决定场景起始的时候，场景内的物件的处理，这里让尖刺不要旋转，伤害为5点HP一次
         public override void Scene_OnLoad()
         {
 
@@ -24,6 +43,7 @@
             g_iStoneMaxHP = g_iLevel01StoneMaxHP;
         }
 
+        //处理箱子，酒坛，桌子，椅子等道具
         public override void Scene_OnInit()
         {
             int i;
@@ -106,6 +126,7 @@
             return 1;
         }
 
+        //石头遭到攻击时被客户端调用
         public int StoneOnAttack(int id, int index, int damage)
         {
             string name = "";
@@ -124,6 +145,7 @@
             return 0;
         }
 
+        //石头在待机时被框架调用
         public void StoneOnIdle(int id, int index)
         {
             if (g_bStoneAlive[index - 1] == 1)
@@ -135,11 +157,17 @@
             }
         }
 
+        //关卡时间长度：分钟
         int RoundTime = 10;
+        //主角出生点
         int PlayerSpawn = 9;
+        //主角出生方向-不太重要，就是角色朝着哪个方向
         int PlayerSpawnDir = 90;
+        //主手武器
         int PlayerWeapon = 5;
+        //背包武器
         int PlayerWeapon2 = 1;
+        //角色气血：150
         int PlayerHP = 1500;
         public override int GetRoundTime() { return RoundTime; }
         public override int GetPlayerSpawn() { return PlayerSpawn; }
@@ -155,12 +183,15 @@
         int trg5 = 0;
         int trg6 = 0;
 
+        //关卡启动时，增加NPC初始化
+        //可以在触发一些条件时，调用AddNPC即可添加NPC，NPC也需要提交给我
         public override void OnStart()
         {
             AddNPC("npc2000_1");
             base.OnStart();
         }
 
+        //每一帧被客户端调用
         public override int OnUpdate()
         {
             return 0;

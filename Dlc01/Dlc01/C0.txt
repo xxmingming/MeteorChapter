@@ -1,0 +1,3 @@
+﻿关卡编号	地图名称	场景版本	禁止寻路	关卡名称	关卡类型	剧本C#类名	额外初始怪物脚本	场景读取原流星des gmb文件初始化地图	背景音乐	预览图	关卡胜利条件	胜利条件参数
+Id	Scene	Template	DisableFindWay	Name	LevelType	LevelScript	StartScript	sceneItems	BgmName	BgTexture	Pass	Param
+1	Meteor_01	0	0	钟乳洞	5	c001		sn01	S2	scene2	1	
