@@ -1,0 +1,34 @@
+local class = {}
+function c001_npc05_02()
+	class.Name = "½­ºþÉ±ÊÖ.2";
+	class.Model = 3;
+	class.Weapon = 47;
+	class.Weapon2 = 0;
+	class.Team = 2;
+	class.View = 10000;
+	class.Think = 200;
+	class.Attack1 = 20;
+	class.Attack2 = 30;
+	class.Attack3 = 40;
+	class.Guard = 30;
+	class.Dodge = 10;
+	class.Jump = 58;
+	class.Look = 50;
+	class.Burst = 3;
+	class.Aim = 60;
+	class.GetItem = 5;
+	class.Spawn = 2;
+	class.HP = 8000;
+	class.g_selfAddr = 0;
+	class.g_self = 0;
+	return class;
+end
+
+function class:OnInit(a)
+	class.g_selfAddr = a;
+end
+
+function class:OnStart()
+	class.g_self = GetSelf(class.g_selfAddr);
+	ChangeBehavior(class.g_self, "wait");
+end
