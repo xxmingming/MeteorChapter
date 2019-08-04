@@ -1,6 +1,6 @@
-local class = {}
+ï»¿local class = {}
 function c001_npc10_06()
-	class.Name = "ËïÓñ²®";
+	class.Name = "å­™çŽ‰ä¼¯";
 	class.Model = 18;
 	class.Weapon = 24;
 	class.Weapon2 = 0;

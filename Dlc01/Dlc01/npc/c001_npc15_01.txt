@@ -1,6 +1,6 @@
-local class = {}
+ï»¿local class = {}
 function c001_npc15_01()
-	class.Name = "ÎåÀ×Ëþ.»¤·¨";
+	class.Name = "äº”é›·å¡”.æŠ¤æ³•";
 	class.Model = 2;
 	class.Weapon = 18;
 	class.Weapon2 = 0;
@@ -30,5 +30,5 @@ end
 
 function class:OnStart()
 	class.g_self = GetSelf(class.g_selfAddr);
-	ChangeBehavior(class.g_self, "follow","·¶è¯");
+	ChangeBehavior(class.g_self, "follow","èŒƒç’‡");
 end
