@@ -104,6 +104,12 @@
         public override int GetPlayerWeapon() { return PlayerWeapon; }
         public override int GetPlayerWeapon2() { return PlayerWeapon2; }
         public override int GetPlayerMaxHp() { return PlayerHP; }
+        public override GameResult OnUnitDead(MeteorUnit deadUnit)
+        {
+            if (deadUnit.Attr.NpcTemplate == "c001_npc01_01")
+                return GameResult.Fail;
+            return base.OnUnitDead(deadUnit);
+        }
         int g_counter = 0;
         int trg0 = 0;
         int trg1 = 0;
@@ -1713,6 +1719,12 @@
         public override int GetPlayerWeapon() { return PlayerWeapon; }
         public override int GetPlayerWeapon2() { return PlayerWeapon2; }
         public override int GetPlayerMaxHp() { return PlayerHP; }
+        public override GameResult OnUnitDead(MeteorUnit deadUnit)
+        {
+            if (deadUnit.Attr.NpcTemplate == "c001_npc09_01")
+                return GameResult.Fail;
+            return base.OnUnitDead(deadUnit);
+        }
         int g_counter = 0;
         int trg0 = 0;
         int trg1 = 0;
@@ -2154,6 +2166,12 @@
         public override int GetPlayerWeapon() { return PlayerWeapon; }
         public override int GetPlayerWeapon2() { return PlayerWeapon2; }
         public override int GetPlayerMaxHp() { return PlayerHP; }
+        public override GameResult OnUnitDead(MeteorUnit deadUnit)
+        {
+            if (deadUnit.Attr.NpcTemplate == "c001_npc10_01")
+                return GameResult.Fail;
+            return base.OnUnitDead(deadUnit);
+        }
         int g_counter = 0;
         int trg0 = 0;
         int trg1 = 0;
@@ -3420,6 +3438,12 @@
         public override int GetPlayerWeapon() { return PlayerWeapon; }
         public override int GetPlayerWeapon2() { return PlayerWeapon2; }
         public override int GetPlayerMaxHp() { return PlayerHP; }
+        public override GameResult OnUnitDead(MeteorUnit deadUnit)
+        {
+            if (deadUnit.Attr.NpcTemplate == "c001_npc14_01")
+                return GameResult.Fail;
+            return base.OnUnitDead(deadUnit);
+        }
         int g_iDoorMaxHP;
         int DoorState1HP;
         int DoorState2HP;
