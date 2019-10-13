@@ -2,7 +2,7 @@
 function c001_npc15_09()
 	class.Name = "范璇";
 	class.Model = 16;
-	class.Weapon = 59;
+	class.Weapon = 306;
 	class.Weapon2 = 0;
 	class.Team = 2;
 	class.View = 150;
